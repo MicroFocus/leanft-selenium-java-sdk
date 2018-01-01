@@ -1,0 +1,11 @@
+#ignore exlipse project files
+.classpath
+.project
+.settings
+
+#ignore intelliJ project files
+.idea
+*.iml
+
+#ignore maven project output folder
+target
