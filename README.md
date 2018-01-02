@@ -29,6 +29,7 @@ The following example demonstrates locating elements by their visible text.
         driver.get("http://www.google.com");
 
         WebElement element = driver.findElement(By.visibleText("Google Search"));
+        element.click();
 
         driver.quit();
 ```
@@ -39,6 +40,7 @@ The following example demonstrates locating elements using a regular expression
         driver.get("http://www.google.com");
 
         WebElement element = driver.findElement(By.name(Pattern.compile("^btn")));
+        element.click();
 
         driver.quit(); 
 ```
@@ -54,6 +56,7 @@ Locate an element using its HTML attributes and highlight it.
         attributes.put("id", "lst-ib");
 
         WebElement element = driver.findElement(By.attributes(attributes));
+        element.click();
 
         driver.quit();
  ```
