@@ -2,7 +2,7 @@
 
 LeanFT Java SDK for Selenium
 
-LeanFT for Selenium Java SDK extends the Selenium WebDriver API with locators and utilities that enable creating tests which are more robust, and reduces Selenium test automation and maintenance efforts.
+LeanFT for Selenium Java SDK - extends the Selenium WebDriver API with locators and utilities that enable creating tests which are more robust, and reduces Selenium test automation and maintenance efforts.
 
 ## Install
 
@@ -15,17 +15,20 @@ LeanFT for Selenium Java SDK extends the Selenium WebDriver API with locators an
 ```
 
 ## Usage Example
+LeanFT's By class extends the original Selenium's By class, in order to use it you should make the following import:
+
+```java
+import com.hpe.leanft.selenium.By;
+import com.hpe.leanft.selenium.ByEach;
+import com.hpe.leanft.selenium.Utils;
+```
 
 The following example demonstrates locating elements by their visible text.
 ```java
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.google.com");
 
-        Map<String, String> attributes = new HashMap<>();
-        attributes.put("class", "gsfi lst-d-f");
-        attributes.put("id", "lst-ib");
-
-        WebElement element = driver.findElement(By.attributes(attributes));
+        WebElement element = driver.findElement(By.visibleText("Google Search"));
 
         driver.quit();
 ```
