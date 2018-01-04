@@ -1,8 +1,8 @@
 # leanft-selenium-java-sdk
 
-LeanFT Java SDK for Selenium
+LeanFT for Selenium Java SDK
 
-LeanFT for Selenium Java SDK - extends the Selenium WebDriver API with locators and utilities that enable creating tests which are more robust, and reduces Selenium test automation and maintenance efforts.
+LeanFT for Selenium Java SDK extends the Selenium WebDriver API with locators and utilities that enable creating tests that are more robust, and reduces Selenium test automation and maintenance efforts.
 
 ## Install
 
@@ -15,7 +15,7 @@ LeanFT for Selenium Java SDK - extends the Selenium WebDriver API with locators 
 ```
 
 ## Usage Example
-LeanFT's By class extends the original Selenium's By class, in order to use it you should make the following import:
+LeanFT's By class extends the original Selenium By class. To use it,  import the following:
 
 ```java
 import com.hpe.leanft.selenium.By;
@@ -34,7 +34,7 @@ The following example demonstrates locating elements by their visible text.
         driver.quit();
 ```
 
-The following example demonstrates locating elements using a regular expression
+The following example demonstrates locating elements using a regular expression.
 ```java
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.google.com");
@@ -86,7 +86,7 @@ Finds elements based on their type.
 
 #### By.attributes
 
-Finds elements based on their attributes (one or more). Attributes values can be defined using regular expressions.
+Finds elements based on their attributes (one or more). Attribute values can be defined using regular expressions.
 
 #### By.styles
 
@@ -98,7 +98,7 @@ Finds elements based on the combination of locators (attributes, tags, styles et
 
 ### Regular Expression Support
 
-All the locators which accepts string as value of the element's property were extended to support regular expressions including the following Selenium native locators:
+All the locators which accept a string as a value of the element's property were extended to support regular expressions, including the following Selenium native locators:
 
 * By.id
 * By.className
@@ -119,7 +119,7 @@ Highlights the selenium element in the browser.
 
 ## build
 
-To build the project clone it and run the following command
+To build the project, clone it and run the following command:
 
 ```
 mvn clean install
