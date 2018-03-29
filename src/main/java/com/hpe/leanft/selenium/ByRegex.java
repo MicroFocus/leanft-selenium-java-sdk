@@ -70,8 +70,9 @@ abstract class ByRegex extends By {
 
     /**
      * Finds all the elements that match pattern.pattern() global field.
-     *
+     * @param executor The executor that runs runs the script in the browser.
      * @param element The Web element used as the root element from which to search.
+     * @return A list of found web elements.
      */
     protected abstract List<WebElement> findElementsByRegex(JavascriptExecutor executor, WebElement element);
 
