@@ -647,11 +647,6 @@ public abstract class By extends org.openqa.selenium.By {
 		protected List<WebElement> findElementsByRegex(
 				JavascriptExecutor executor, WebElement element) {
 			List<WebElement> matchedElements;
-			String regexflags = InternalUtils.flagsToString(pattern);
-
-			if (regexflags.length() == 0 || regexflags.toCharArray()[0] != 'i') {
-				regexflags = "i" + regexflags;
-			}
 
 			matchedElements = (List<WebElement>) executor.executeScript(
 					jsGetElementsFunc,
@@ -659,7 +654,7 @@ public abstract class By extends org.openqa.selenium.By {
 					null,
 					"tagName",
 					pattern.pattern(),
-					"i"
+					InternalUtils.flagsToString(pattern)
 			);
 
 			if (matchedElements == null || matchedElements.size() == 0) {
@@ -692,11 +687,6 @@ public abstract class By extends org.openqa.selenium.By {
 		protected List<WebElement> findElementsByRegex(
 				JavascriptExecutor executor, WebElement element) {
 			List<WebElement> matchedElements;
-			String regexflags = InternalUtils.flagsToString(pattern);
-
-			if (regexflags.length() == 0 || regexflags.toCharArray()[0] != 'i') {
-				regexflags = "i" + regexflags;
-			}
 
 			matchedElements = (List<WebElement>) executor.executeScript(
 					jsGetElementsFunc,
@@ -704,7 +694,7 @@ public abstract class By extends org.openqa.selenium.By {
 					null,
 					"role",
 					pattern.pattern(),
-					"i"
+					InternalUtils.flagsToString(pattern)
 			);
 
 			if (matchedElements == null || matchedElements.size() == 0) {
@@ -737,17 +727,14 @@ public abstract class By extends org.openqa.selenium.By {
 		protected List<WebElement> findElementsByRegex(
 				JavascriptExecutor executor, WebElement element) {
 			List<WebElement> matchedElements;
-			String regexflags = InternalUtils.flagsToString(pattern);
-			if (regexflags.length() == 0 || regexflags.toCharArray()[0] != 'i') {
-				regexflags = "i" + regexflags;
-			}
+
 			matchedElements = (List<WebElement>) executor.executeScript(
 					jsGetElementsFunc,
 					element,
 					null,
 					"type",
 					pattern.pattern(),
-					"i"
+					InternalUtils.flagsToString(pattern)
 			);
 
 			if (matchedElements == null || matchedElements.size() == 0) {
