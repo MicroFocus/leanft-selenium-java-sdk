@@ -844,9 +844,14 @@ public abstract class By extends org.openqa.selenium.By {
 		@Override
 		public List<WebElement> findElements(SearchContext searchContext) {
 			JavascriptExecutor executor = InternalUtils.getExecutor(searchContext);
+			WebElement rootElement = null;
+			if (searchContext instanceof WebElement) {
+				rootElement = (WebElement) searchContext;
+			}
+
 			List<WebElement> webElements = (List<WebElement>) executor.executeScript(
 					jsFindRegExpAttributesFunc,
-					null,
+					rootElement,
 					attributes
 			);
 
