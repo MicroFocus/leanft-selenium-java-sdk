@@ -91,8 +91,9 @@ public class Utils {
      * Highlights the selenium elements in the browser for t milliseconds.
      *
      * @param element The web element to highlight.
-     * @param t       The time (in milliseconds) that the element will be highlighted.
+     * @param t       The time (in milliseconds) that the element is highlighted.
      *                In case of a negative number, the method throws an IllegalArgumentException.
+                      If time is less than 150, the element is not highlighted.
      * @throws InterruptedException Thrown in case the thread is interrupted while waiting for the highlight to finish.
      */
     public static void highlight(WebElement element, long t) throws InterruptedException {
