@@ -654,7 +654,7 @@ public abstract class By extends org.openqa.selenium.By {
 					null,
 					"tagName",
 					pattern.pattern(),
-					InternalUtils.flagsToString(pattern)
+					"i"
 			);
 
 			if (matchedElements == null || matchedElements.size() == 0) {
