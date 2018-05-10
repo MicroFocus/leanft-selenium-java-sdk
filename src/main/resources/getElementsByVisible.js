@@ -30,17 +30,40 @@ function findElements(candidates, visible) {
     });
 }
 
-function isVisible (element) {
+function isOneOfAncestorsInvisible (element) {
+    var parent = element.parentNode;
+    while (parent && parent.nodeType === parent.ELEMENT_NODE) {
+        var parentVisible = isVisibleInternal(parent);
+        if (!parentVisible)
+            return true;
+
+        parent = parent.parentNode;
+    }
+
+    return false;
+}
+
+function isVisibleInternal(element) {
     var rect = element.getBoundingClientRect();
     if (rect.width === 0 && rect.height === 0)
         return false;
 
     var style = window.getComputedStyle(element);
     return style.width !== 0 &&
-           style.height !== 0 &&
-           style.opacity !== 0 &&
-           style.display !== 'none' &&
-           style.visibility !== 'hidden';
+        style.height !== 0 &&
+        style.opacity !== 0 &&
+        style.display !== 'none' &&
+        style.visibility !== 'hidden';
+}
+
+function isVisible (element) {
+    if (!isVisibleInternal(element))
+        return false;
+
+    if (window.navigator.userAgent.indexOf("MSIE ") > 0 && isOneOfAncestorsInvisible(element))
+        return false;
+
+    return true;
 }
 
 return findElements(candidates, arguments[1]);
