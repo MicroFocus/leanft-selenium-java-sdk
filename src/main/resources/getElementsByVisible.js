@@ -60,7 +60,9 @@ function isVisible (element) {
     if (!isVisibleInternal(element))
         return false;
 
-    if (window.navigator.userAgent.indexOf("MSIE ") > 0 && isOneOfAncestorsInvisible(element))
+    var isInternetExplorer = false || !!document.documentMode;
+
+    if (isInternetExplorer && isOneOfAncestorsInvisible(element))
         return false;
 
     return true;
