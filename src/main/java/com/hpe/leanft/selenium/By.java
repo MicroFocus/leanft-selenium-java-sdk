@@ -34,6 +34,9 @@ import java.util.regex.Pattern;
  * Contains all LeanFT for Selenium By methods for locating elements.
  */
 public abstract class By extends org.openqa.selenium.By {
+	/**
+	 * Regular expression flags.
+	 */
 	public enum FLAGS {
 		CASE_INSENSITIVE("2");
 		String flag;
