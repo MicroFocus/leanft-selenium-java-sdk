@@ -33,6 +33,11 @@ class ByXPathBase extends By {
     private final String attributeName; // Can be type or role.
     private final String xPathExp;      // The expression to look for.
 
+	/**
+     * A constructor for the ByXPathBase locator.
+     * @param attributeName The name of the attribute.
+     * @param xPathExp The XPath expression.
+     */
     ByXPathBase(String attributeName, String xPathExp) {
         this.attributeName = attributeName;
         this.xPathExp = xPathExp;
