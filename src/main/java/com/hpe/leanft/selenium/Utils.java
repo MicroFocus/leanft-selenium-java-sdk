@@ -1,4 +1,4 @@
-// (c) Copyright [2018] EntIT Software LLC, a Micro Focus Company
+/*! (c) Copyright 2015 - 2018 Micro Focus or one of its affiliates. */
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
