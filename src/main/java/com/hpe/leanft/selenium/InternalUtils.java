@@ -19,7 +19,6 @@
 package com.hpe.leanft.selenium;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.internal.WrapsDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
 
@@ -73,7 +72,18 @@ class InternalUtils {
         }
 
         if (context instanceof WebElement) {
-            return (RemoteWebDriver) ((WrapsDriver) context).getWrappedDriver();
+            try {
+                // Selenium moved the WrapsDriver class from the org.openqa.selenium.internal package to
+                // org.openqa.selenium on 30 Jul 2018. However, since we want to support Selenium both prior and after
+                // the change, we have to access the getWrappedDriver method by reflection.
+
+                Method getWrappedDriverMethod = context.getClass().getDeclaredMethod("getWrappedDriver");
+                Object webDriver = getWrappedDriverMethod.invoke(context);
+                return (RemoteWebDriver) webDriver;
+
+            } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+                e.printStackTrace();
+            }
         }
 
         return null;
@@ -91,7 +101,7 @@ class InternalUtils {
         }
 
 
-        WebDriver wrapsDriver = ((WrapsDriver) context).getWrappedDriver();
+        WebDriver wrapsDriver = getDriver(context);
 
         return (JavascriptExecutor) wrapsDriver;
     }
@@ -119,7 +129,7 @@ class InternalUtils {
         Dimension eleSize = element.getSize();
         Point eleLocation = element.getLocation();
 
-        WebDriver wrapsDriver = ((WrapsDriver) element).getWrappedDriver();
+        WebDriver wrapsDriver = getDriver(element);
         Dimension winSize = wrapsDriver.manage().window().getSize();
 
         return !((eleSize.width + eleLocation.x > winSize.width) || (eleSize.height + eleLocation.y > winSize.height));

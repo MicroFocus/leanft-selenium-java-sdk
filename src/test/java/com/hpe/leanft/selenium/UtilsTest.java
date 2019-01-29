@@ -26,6 +26,7 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver.Options;
 import org.openqa.selenium.WebDriver.Window;
 import org.openqa.selenium.internal.WrapsDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -54,7 +55,7 @@ public class UtilsTest {
 	@Test
 	public void getSnapshot_ShouldReturnElementImage() throws Exception {
 		WebElement webElement = mock(WebElement.class, withSettings().extraInterfaces(WrapsDriver.class));
-		WebDriver wrapsDriverMock = mock(WebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
+		RemoteWebDriver wrapsDriverMock = mock(RemoteWebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
 		when(((WrapsDriver) webElement).getWrappedDriver()).thenReturn(wrapsDriverMock);
 
 		final Map<String, Object> rectMap = new HashMap<>();
@@ -130,7 +131,7 @@ public class UtilsTest {
 	@Test
 	public void highlight_WithOneParamShouldRunScript() throws InterruptedException {
 		WebElement webElement = mock(WebElement.class, withSettings().extraInterfaces(WrapsDriver.class));
-		WebDriver wrapsDriverMock = mock(WebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
+		RemoteWebDriver wrapsDriverMock = mock(RemoteWebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
 		when(((WrapsDriver) webElement).getWrappedDriver()).thenReturn(wrapsDriverMock);
 
 		Options manage = mock(Options.class);
@@ -154,7 +155,7 @@ public class UtilsTest {
 	@Test
 	public void highlight_DefaultTimeoutForHighlightShouldBe6Seconds() throws InterruptedException {
 		WebElement webElement = mock(WebElement.class, withSettings().extraInterfaces(WrapsDriver.class));
-		WebDriver wrapsDriverMock = mock(WebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
+		RemoteWebDriver wrapsDriverMock = mock(RemoteWebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
 		when(((WrapsDriver) webElement).getWrappedDriver()).thenReturn(wrapsDriverMock);
 
 		Options manage = mock(Options.class);
@@ -180,7 +181,7 @@ public class UtilsTest {
 	@Test
 	public void highlight_HighlightWithTwoParamShouldRunScript() throws InterruptedException {
 		WebElement webElement = mock(WebElement.class, withSettings().extraInterfaces(WrapsDriver.class));
-		WebDriver wrapsDriverMock = mock(WebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
+		RemoteWebDriver wrapsDriverMock = mock(RemoteWebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
 		when(((WrapsDriver) webElement).getWrappedDriver()).thenReturn(wrapsDriverMock);
 
 		Options manage = mock(Options.class);
@@ -204,7 +205,7 @@ public class UtilsTest {
 	@Test
 	public void highlight_HighlightWithNonVisibleElementShouldScrollIntoView() throws InterruptedException {
 		WebElement webElement = mock(WebElement.class, withSettings().extraInterfaces(WrapsDriver.class));
-		WebDriver wrapsDriverMock = mock(WebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
+		RemoteWebDriver wrapsDriverMock = mock(RemoteWebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
 		when(((WrapsDriver) webElement).getWrappedDriver()).thenReturn(wrapsDriverMock);
 
 		Options manage = mock(Options.class);
@@ -236,7 +237,7 @@ public class UtilsTest {
 	@Test
 	public void scrollIntoView_ShouldNotScrollIfVisible() {
 		WebElement webElement = mock(WebElement.class, withSettings().extraInterfaces(WrapsDriver.class));
-		WebDriver wrapsDriverMock = mock(WebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
+		RemoteWebDriver wrapsDriverMock = mock(RemoteWebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
 		when(((WrapsDriver) webElement).getWrappedDriver()).thenReturn(wrapsDriverMock);
 
 		// Send element visible - true.
@@ -262,7 +263,7 @@ public class UtilsTest {
 	@Test
 	public void scrollIntoView_ShouldScrollIfNotVisible() {
 		WebElement webElement = mock(WebElement.class, withSettings().extraInterfaces(WrapsDriver.class));
-		WebDriver wrapsDriverMock = mock(WebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
+		RemoteWebDriver wrapsDriverMock = mock(RemoteWebDriver.class, withSettings().extraInterfaces(JavascriptExecutor.class, TakesScreenshot.class));
 		when(((WrapsDriver) webElement).getWrappedDriver()).thenReturn(wrapsDriverMock);
 
 		// Send element not visible (false).

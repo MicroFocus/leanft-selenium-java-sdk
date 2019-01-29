@@ -19,7 +19,6 @@
 package com.hpe.leanft.selenium;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.internal.WrapsDriver;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -57,7 +56,7 @@ public class Utils {
         }
 
         Map<String, Object> obj;
-        WebDriver wrapsDriver = ((WrapsDriver) element).getWrappedDriver();
+        WebDriver wrapsDriver = InternalUtils.getDriver(element);
 
         if (isVisible(element)) {
             obj = (Map<String, Object>) ((JavascriptExecutor) wrapsDriver).executeScript(SCREENSHOT_PREPARE, element);
@@ -106,7 +105,7 @@ public class Utils {
         if (t == 0)
             return;
 
-        WebDriver wrapsDriver = ((WrapsDriver) element).getWrappedDriver();
+        WebDriver wrapsDriver = InternalUtils.getDriver(element);
 
         JavascriptExecutor executor = (JavascriptExecutor) wrapsDriver;
 
@@ -132,7 +131,7 @@ public class Utils {
             throw new IllegalArgumentException("Cannot scrollIntoView null object.");
         }
 
-        WebDriver wrapsDriver = ((WrapsDriver) element).getWrappedDriver();
+        WebDriver wrapsDriver = InternalUtils.getDriver(element);
         JavascriptExecutor executor = (JavascriptExecutor) wrapsDriver;
 
         // Scroll into the view.
