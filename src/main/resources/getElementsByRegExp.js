@@ -23,7 +23,7 @@ function findElements(candidates, propName, regex, flags) {
         var valuesToMatch = [e.getAttribute(propName) || e[propName]];
 
         if(propName === "className") {
-            valuesToMatch =  e[propName] ? e[propName].split(" ") : [];
+            valuesToMatch =  e.hasAttribute("class") ? e.getAttribute("class").split(" ") : [];
         }
 
         return (Array.prototype.filter.call(valuesToMatch, function(val) {
