@@ -135,8 +135,6 @@ public class Utils {
         JavascriptExecutor executor = (JavascriptExecutor) wrapsDriver;
 
         // Scroll into the view.
-        if (!isVisible(element)) {
-            executor.executeScript(SCROLL_INTO_VIEW_FUNC, element);
-        }
+        executor.executeScript(SCROLL_INTO_VIEW_FUNC, element);
     }
 }

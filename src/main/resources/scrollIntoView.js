@@ -17,14 +17,14 @@
 // limitations under the License.
 
 var obj = arguments[0];
-var isIE = false || !!document.d
+var isIE = false || !!document.documentMode;
 
 if (isIE){
     var direction = determineRowScrollDirection(obj.parentNode, obj);
     scrollRowIntoView(obj.parentNode, obj, direction);
 }
 else {
-    obj.scrollIntoView(true);
+    obj.scrollIntoView(false);
 }
 
 // Determines the direction to scroll to bring the row into view.
