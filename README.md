@@ -10,7 +10,7 @@ LeanFT for Selenium Java SDK extends the Selenium WebDriver API with locators an
 <dependency>
   <groupId>com.microfocus.adm.leanft</groupId>
   <artifactId>leanft-selenium-java-sdk</artifactId>
-  <version>1.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
