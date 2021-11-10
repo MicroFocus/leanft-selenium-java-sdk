@@ -20,7 +20,6 @@ package com.hpe.leanft.selenium;
 
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.internal.FindsByXPath;
 
 import java.util.List;
 /**
@@ -48,14 +47,14 @@ class ByXPathBase extends By {
 
     @Override
     public List<WebElement> findElements(SearchContext context) {
-        return ((FindsByXPath) context).findElementsByXPath(".//*[@" + attributeName + " = '" + xPathExp
-                + "']");
+        return context.findElements(By.xpath(".//*[@" + attributeName + " = '" + xPathExp
+                + "']"));
     }
 
     @Override
     public WebElement findElement(SearchContext context) {
-        return ((FindsByXPath) context).findElementByXPath(".//*[@" + attributeName + " = '" + xPathExp
-                + "']");
+        return context.findElement(By.xpath(".//*[@" + attributeName + " = '" + xPathExp
+                + "']"));
     }
 
     @Override

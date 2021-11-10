@@ -25,11 +25,11 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver.Options;
 import org.openqa.selenium.WebDriver.Window;
-import org.openqa.selenium.internal.WrapsDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.awt.image.Raster;
 import java.awt.image.RenderedImage;

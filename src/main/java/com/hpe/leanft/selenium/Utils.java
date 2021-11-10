@@ -22,6 +22,7 @@ import org.openqa.selenium.*;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.ByteArrayInputStream;
