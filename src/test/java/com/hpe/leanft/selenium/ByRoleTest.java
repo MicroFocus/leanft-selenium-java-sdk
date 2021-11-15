@@ -1,4 +1,4 @@
-/*! (c) Copyright 2015 - 2018 Micro Focus or one of its affiliates. */
+/*! (c) Copyright 2015 – 2021 Micro Focus or one of its affiliates. */
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.internal.FindsByXPath;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.times;
@@ -53,20 +52,20 @@ public class ByRoleTest {
 
 	@Test
 	public void findElement_ShouldConstructXpathUsingType() {
-		FindsByXPath contextMoxk = Mockito.mock(FindsByXPath.class, Mockito.withSettings().extraInterfaces(SearchContext.class));
+		SearchContext contextMoxk = Mockito.mock(SearchContext.class);
 
 		_byStrategyUnderTest.findElement((SearchContext) contextMoxk);
 
-		verify(contextMoxk, times(1)).findElementByXPath(".//*[@role = 'some string']");
+		verify(contextMoxk, times(1)).findElement(By.xpath(".//*[@role = 'some string']"));
 	}
 
 	@Test
 	public void findElements_ShouldConstructXpathUsingText() {
-		FindsByXPath contextMoxk = Mockito.mock(FindsByXPath.class, Mockito.withSettings().extraInterfaces(SearchContext.class));
+		SearchContext contextMoxk = Mockito.mock(SearchContext.class);
 
 		_byStrategyUnderTest.findElements((SearchContext) contextMoxk);
 
-		verify(contextMoxk, times(1)).findElementsByXPath(".//*[@role = 'some string']");
+		verify(contextMoxk, times(1)).findElements(By.xpath(".//*[@role = 'some string']"));
 	}
 
 	@Test

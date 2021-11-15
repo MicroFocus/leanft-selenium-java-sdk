@@ -1,4 +1,4 @@
-/*! (c) Copyright 2015 - 2018 Micro Focus or one of its affiliates. */
+/*! (c) Copyright 2015 – 2021 Micro Focus or one of its affiliates. */
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import org.openqa.selenium.*;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.ByteArrayInputStream;

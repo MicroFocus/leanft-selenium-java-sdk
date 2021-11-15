@@ -1,4 +1,4 @@
-/*! (c) Copyright 2015 - 2018 Micro Focus or one of its affiliates. */
+/*! (c) Copyright 2015 – 2021 Micro Focus or one of its affiliates. */
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // You may not use this file except in compliance with the License.
@@ -25,11 +25,11 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver.Options;
 import org.openqa.selenium.WebDriver.Window;
-import org.openqa.selenium.internal.WrapsDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.awt.image.Raster;
 import java.awt.image.RenderedImage;
